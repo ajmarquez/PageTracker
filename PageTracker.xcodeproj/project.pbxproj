@@ -11,6 +11,9 @@
 		1C08771727E4D156008EB151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C08771627E4D156008EB151 /* ContentView.swift */; };
 		1C08771927E4D159008EB151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C08771827E4D159008EB151 /* Assets.xcassets */; };
 		1C08771C27E4D159008EB151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C08771B27E4D159008EB151 /* Preview Assets.xcassets */; };
+		1C08772727E4D8BD008EB151 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C08772527E4D8BD008EB151 /* Main.xcdatamodeld */; };
+		1C08772927E4DD24008EB151 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C08772827E4DD24008EB151 /* DataController.swift */; };
+		1CB7710D27E4F5EF00B6C8B5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB7710C27E4F5EF00B6C8B5 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,11 @@
 		1C08771627E4D156008EB151 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1C08771827E4D159008EB151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C08771B27E4D159008EB151 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1C08772627E4D8BD008EB151 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		1C08772827E4DD24008EB151 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		1CB7710927E4F5C400B6C8B5 /* PageTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PageTracker.entitlements; sourceTree = "<group>"; };
+		1CB7710A27E4F5C900B6C8B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1CB7710C27E4F5EF00B6C8B5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB7710D27E4F5EF00B6C8B5 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +46,7 @@
 			children = (
 				1C08771327E4D156008EB151 /* PageTracker */,
 				1C08771227E4D156008EB151 /* Products */,
+				1CB7710B27E4F5EF00B6C8B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +61,14 @@
 		1C08771327E4D156008EB151 /* PageTracker */ = {
 			isa = PBXGroup;
 			children = (
+				1CB7710A27E4F5C900B6C8B5 /* Info.plist */,
+				1CB7710927E4F5C400B6C8B5 /* PageTracker.entitlements */,
 				1C08771427E4D156008EB151 /* PageTrackerApp.swift */,
 				1C08771627E4D156008EB151 /* ContentView.swift */,
 				1C08771827E4D159008EB151 /* Assets.xcassets */,
 				1C08771A27E4D159008EB151 /* Preview Content */,
+				1C08772527E4D8BD008EB151 /* Main.xcdatamodeld */,
+				1C08772827E4DD24008EB151 /* DataController.swift */,
 			);
 			path = PageTracker;
 			sourceTree = "<group>";
@@ -65,6 +79,14 @@
 				1C08771B27E4D159008EB151 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1CB7710B27E4F5EF00B6C8B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CB7710C27E4F5EF00B6C8B5 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C08772727E4D8BD008EB151 /* Main.xcdatamodeld in Sources */,
+				1C08772927E4DD24008EB151 /* DataController.swift in Sources */,
 				1C08771727E4D156008EB151 /* ContentView.swift in Sources */,
 				1C08771527E4D156008EB151 /* PageTrackerApp.swift in Sources */,
 			);
@@ -264,6 +288,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PageTracker/PageTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PageTracker/Preview Content\"";
@@ -271,9 +296,12 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PageTracker/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -285,7 +313,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -294,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PageTracker/PageTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PageTracker/Preview Content\"";
@@ -301,9 +330,12 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PageTracker/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,7 +347,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -341,6 +373,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C08772527E4D8BD008EB151 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C08772627E4D8BD008EB151 /* Main.xcdatamodel */,
+			);
+			currentVersion = 1C08772627E4D8BD008EB151 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1C08770927E4D156008EB151 /* Project object */;
 }
